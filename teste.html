@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	
+	<script>
+		navigator.userMedia = navigator.getUserMedia || navigator.mozGetUserMedia;
+		navigator.userMedia({audio: true}, success, function(data){
+
+		});
+		function success(){
+			alert("xablau");
+		};
+	</script>	
+</body>
+</html>

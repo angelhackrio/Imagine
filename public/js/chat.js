@@ -24,7 +24,7 @@
       if (!running) {
         $('#resultsText').val('');   // clear hypotheses from previous runs
         console.log('Not running, handleMicrophone()');
-        handleMicrophone(token, currentModel, mic, function(err) {
+        handleMicrophone( currentModel, mic, function(err) {
           if (err) {
             var msg = 'Error: ' + err.message;
             console.log(msg);
