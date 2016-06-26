@@ -16,7 +16,7 @@
 /* global OfflineAudioContext */
 'use strict';
 
-var utils = require('./utils');
+// var utils = require('./utils');
 /**
  * Captures microphone input from the browser.
  * Works at least on latest versions of Firefox and Chrome
@@ -294,7 +294,7 @@ Microphone.prototype._exportDataBufferTo16Khz = function(bufferNewSamples) {
 // };
 
 Microphone.prototype._exportDataBuffer = function(buffer){
-  utils.exportDataBuffer(buffer, this.bufferSize);
+  // utils.exportDataBuffer(buffer, this.bufferSize);
 };
 
 
@@ -302,8 +302,6 @@ Microphone.prototype._exportDataBuffer = function(buffer){
 Microphone.prototype.onStartRecording = function() {};
 Microphone.prototype.onStopRecording = function() {};
 Microphone.prototype.onAudio = function() {};
-
-module.exports = Microphone;
 
 Microphone.prototype.saveData = function(samples) {
   for (var i = 0; i < samples.length; ++i) {

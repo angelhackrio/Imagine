@@ -17,9 +17,9 @@
 
 'use strict';
 
-var utils = require('./utils');
-var showerror = require('./views/showerror');
-var showError = showerror.showError;
+// var utils = require('./utils');
+// var showerror = require('./views/showerror');
+// var showError = showerror.showError;
 
 // Mini WS callback API, so we can initialize
 // with model and token in URI, plus
