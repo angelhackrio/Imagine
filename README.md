@@ -1,15 +1,22 @@
-# AngelHack
+# Grupo Demolidores
 
-The Node.js Starter demonstrates a simple, reusable Node.js web application based on the Express framework.
+Nome do projeto: **Imagine**
 
-## Run the app locally
+Categoria: **SaaS**
 
-1. [Install Node.js][]
-2. Download and extract the starter code from the Bluemix UI
-3. cd into the app directory
-4. Run `npm install` to install the app's dependencies
-5. Run `npm start` to start the app
-6. Access the running app in a browser at http://localhost:6001
+Público-alvo: **Crianças em idade escolar**
 
-[Install Node.js]: https://nodejs.org/en/download/
-=======
+Proposta de valor única: **Plataforma inclusiva que busca aprimorar o aprendizado sensorial de todas as crianças, especialmente aquelas com deficiência visual.**
+
+Desafio:
+
+- [x] Bluemix
+- [x] Social
+
+Participantes:
+
+- Beatriz Macedo
+- Daniel Maciel
+- Igor Souza
+- Juliana Ferreira
+- Mariana Rodrigues

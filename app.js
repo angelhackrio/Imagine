@@ -27,13 +27,10 @@ app.listen(appEnv.port, '0.0.0.0', function() {
   console.log("Server starting on " + appEnv.url);
 });
 
-// Get Sound File from Front-End
+// Mutipart Middleware to get files from form data upload
 var multipart = require('connect-multiparty');
 var multipartMiddleware = multipart();
-app.post('/uploadSound', multipartMiddleware, function(req, resp) {
-  console.log(req.body, req.files);
-  // don't forget to delete all req.files when done
-});
+
 
 // Instatiating Watson APIs
 var watson = require('watson-developer-cloud');
@@ -48,28 +45,48 @@ var speech_to_text = watson.speech_to_text({
 var params = {
   content_type: 'audio/wav',
   continuous: true,
-  interim_results: true
+  interim_results: true,
+  model: 'pt-BR_BroadbandModel'
 };
 
-// // Create the stream.
-// var recognizeStream = speech_to_text.createRecognizeStream(params);
-//
-// // Pipe in the audio.
-// fs.createReadStream('audio-file.wav').pipe(recognizeStream);
-//
-// // Pipe out the transcription to a file.
-// recognizeStream.pipe(fs.createWriteStream('transcription.txt'));
-//
-// // Get strings instead of buffers from 'data' events.
-// recognizeStream.setEncoding('utf8');
-//
-// // Listen for events.
-// recognizeStream.on('data', function(event) { onEvent('Data:', event); });
-// recognizeStream.on('results', function(event) { onEvent('Results:', event); });
-// recognizeStream.on('error', function(event) { onEvent('Error:', event); });
-// recognizeStream.on('close-connection', function(event) { onEvent('Close:', event); });
-//
-// // Displays events on the console.
-// function onEvent(name, event) {
-//     console.log(name, JSON.stringify(event, null, 2));
-// };
+// When file is uploaded, send it to watson to speech to text
+app.post('/uploadSound', multipartMiddleware, function(req, res) {
+  console.log(req.body, req.files);
+  // don't forget to delete all req.files when done
+  var sound = req.files.sound;
+
+  // Create the stream.
+  var recognizeStream = speech_to_text.createRecognizeStream(params);
+
+  // Pipe in the audio.
+  fs.createReadStream(sound.path).pipe(recognizeStream);
+
+  // Get strings instead of buffers from 'data' events.
+  recognizeStream.setEncoding('utf8');
+
+  // Listen for events.
+  recognizeStream.on('data', function(event) { onEvent('Data:', event); });
+  recognizeStream.on('results', function(event) { onResults('Results:', event); });
+  recognizeStream.on('error', function(event) { onEvent('Error:', event); });
+  recognizeStream.on('close-connection', function(event) { onEvent('Close:', event); });
+
+  // Displays events on the console.
+  function onEvent(name, event) {
+      console.log(name, JSON.stringify(event, null, 2));
+  }
+  function onResults(name, event) {
+      console.log(name, JSON.stringify(event, null, 2));
+      if (event.results[0]){
+        console.log(name, JSON.stringify(event.results[0]));
+        if (event.results[0].alternatives) {
+          console.log(event.results[0].alternatives[0].transcript);
+          res.json(event.results[0].alternatives[0].transcript);
+        } else {
+          res.status(400).json('Could not transcript');
+        }
+      } else {
+        res.status(400).json('Could not transcript');
+      }
+  }
+
+});
