@@ -279,7 +279,7 @@ a:hover {
 }
 .chatMsg{
 	position: relative;
-	height: 1000px;
+	height: 700px;
 }
 .navChat{
 	margin-bottom: 0px;
@@ -299,8 +299,14 @@ a:hover {
 .msgPessoa{
 	margin-top: 15px;
 	display: flex;
+	color:#666;
 	justify-content: flex-end;
 	padding: 15px;
+	background-color: #fff;
+}
+.btnGrav{
+	margin-top: 40px;
+	color:#6c6c6c;
 	background-color: #fff;
 }
 
