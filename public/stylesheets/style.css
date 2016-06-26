@@ -1,12 +1,25 @@
-/* style.css
- * This file provides css styles.
- */
+
+/* ÍNDICES */
+
+/* ! - MOBILE FIRST */
+
+/* 1 - Header */
+	/* 1.1 - Navbar */
+
+/* 2 - Main */
+	/* 2.1 - Página de Login */
+	/* 2.2 - Página Home */
+
+/* 3 - Chat */	
+
+/* 4 - Página Post */
+
+
 
 body,html {
-	background-color: #3b4b54; width : 100%;
 	height: 100%;
 	margin: 0 auto;
-	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-family: "Roboto", "sans-serif";
 	color: #ffffff;
 }
 
@@ -19,64 +32,355 @@ a:hover {
 	text-decoration: underline;
 }
 
-.newappIcon {
-	padding-top: 10%;
-	display: block;
-	margin: 0 auto;
-	padding-bottom: 2em;
-	max-width:200px;
+
+*{
+	box-sizing: border-box;
 }
 
-h1 {
-	font-weight: bold;
-	font-size: 2em;
-}
-
-.leftHalf {
-	float: left;
-	background-color: #26343f;
-	width: 45%;
-	height: 100%;
-}
-
-.rightHalf {
-	float: right;
-	width: 55%;
-	background-color: #313f4a;
-	height: 100%;
-	overflow:auto;
-}
-
-.blue {
-	color: #00aed1;
+.clear{
+	clear: both;
+	width: 100%;
+	border: 1px solid transparent;
 }
 
 
-table {
-	table-layout: fixed;
-	width: 800px;
-	margin: 0 auto;
-	word-wrap: break-word;
-	padding-top:10%;
+/** 1 - Header **/
+
+	/** 1.1 - Navbar **/
+	.navbar-default{
+		border-radius: 0;
+		background-color: #286bb2;
+		border:none;
+		min-height: 70px;
+	}
+	.navbar-default .navbar-nav>li>a{
+		color: #fff;
+	}
+	.navbar-brand img{ 
+		max-width: 32px;
+	}
+	.navbar-brand{
+		padding: 12px;
+		padding-top: 20px;
+		padding-left: 15px;
+	}
+	.navbar-default .navbar-nav>li>a{
+		padding-top: 0px;
+		margin-top: -24px;
+	}
+
+
+
+/** 2 - Main **/
+#fundoHome{
+	background-image: url('../images/bg.jpg');
+	background-repeat: no-repeat;
+	font-family: 'Roboto','sans-serif';
+	background-size: cover;
+}
+	/** 2.1 - Página de Login **/
+	#pageLogin{
+		max-width: 600px;
+		margin: auto;
+		display: flex;
+		height: 100vh;
+		align-items: center;
+	}
+	#pageLogin img{
+		margin: auto;
+	}
+	#pageLogin h4{
+		margin-top: 10px;
+		text-align: center;
+		font-weight: 300;
+		margin-bottom: 80px;
+	}
+	#pageLogin .img1{
+		margin-top: 80px;
+		margin-bottom: 20px;
+	}
+	#pageLogin a{
+		cursor: pointer;
+	}
+	#pageLogin a:hover{
+		text-decoration: none;
+	}
+	#pageLogin a:active{
+		text-decoration: none;
+	}
+	#pageLogin a:visited{
+		text-decoration: none;
+	}
+	.entraFacebook{
+		background-image: url('../images/facebook.png');
+		background-size: 18px;
+		background-repeat: no-repeat;
+		background-position: 24px center;
+		color: #286bb2;
+	}
+	.entraVisita{
+		background-image: url('../images/visita.png');
+		background-size: 30px;
+		background-repeat: no-repeat;
+		background-position: 20px center;
+		color: #767676;
+	}
+	.btnEntra{
+		border-radius: 10px;
+		box-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+		background-color: #fff;
+		padding: 15px;
+	}
+	.boxLogin a{
+		display: flex;
+		justify-content: center;
+		margin-bottom: 20px;
+	}
+	.menuTexto{
+		list-style: none;
+	    font-size: 19px;
+	    padding-top: 23px;
+	    max-width: 104px;
+	    margin: auto;
+	}
+	/** 2.2 - Página Home **/
+		/** posts configs **/
+		.menuTexto{
+			display: none;
+		}
+		.menuTexto2{
+			display: flex;
+		    font-size: 23px;
+		    align-items: center;
+		    padding-top: 21px;
+		    justify-content: flex-start;
+		}
+		.postsHome{
+			margin: auto;
+			background-color: #d7d7d7;
+			width: 100%;
+			height: 300px;
+			background-repeat: no-repeat;
+			background-size: cover;
+			min-height: 142px;
+			border-radius: 10px;
+			box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+			transition: 0.5s;
+		}
+		.blackBlend{
+			border-radius: 10px;
+			box-shadow: 1px 2px 2px rgba(0,0,0,.3);
+			height: 100%;
+			background-color: rgba(0,0,0,.5);
+		}
+		.postC1{
+			background-color: rgba(0, 138, 255,.5);
+		}
+		.postC2{
+			background-color: rgba(20, 93, 13,.5);
+		}
+		.postC3{
+			background-color: rgba(236, 168, 5,.5);
+		}
+		.postC4{
+			background-color: rgba(210, 29, 29,.5);
+		}
+		.postC5{
+			background-color: rgba(0, 138, 255,.5);
+		}
+		.postC6{
+			background-color: rgba(20, 93, 13,.5);
+		}
+		.iPst{
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			border-radius: 10px;
+			width: 100%;
+		}
+		.iPst h2{
+			margin-bottom: 0px;
+			color:#fff;
+		}
+		.iPst p{
+			font-size: 20px;
+			font-weight: 300;
+		}
+		.imgPost1{
+			background-image: url('../images/historia_1.jpg');
+		}
+		.imgPost2{
+			background-image: url('../images/historia_2.jpg');
+		}
+		.imgPost3{
+			background-image: url('../images/historia_3.jpg');
+		}
+		.imgPost4{
+			background-image: url('../images/historia_4.jpg');
+		}
+		.imgPost5{
+			background-image: url('../images/historia_5.jpg');
+		}
+		.imgPost6{
+			background-image: url('../images/historia_6.jpg');
+		}
+		/** fim posts configs **/
+	#home h1{
+		color: #414141;
+	    padding-left: 15px;
+	    margin-bottom: 20px;
+	    font-weight: 300;
+	    font-size: 60px;
+	    margin-top: 40px;
+	    text-align: center;
+	}
+	#home h3{
+		color: #414141;
+		padding-left: 15px;
+		font-weight: 300;
+		text-align: center;
+		margin-bottom: 40px;
+	}
+	#home a:hover{
+		text-decoration: none;
+		color:#fff;
+	}
+	#home a:hover .postsHome{
+		transform: scale(1.05);
+		transition: 0.5s linear;
+	}
+	#home a:visited{
+		text-decoration: none;
+		color:#fff;
+	}
+	.btncarregaHome{
+		margin-top: 50px;
+		float: right;
+		margin-right: 15px;
+	}
+	#home .col-md-6{
+		margin-bottom: 30px;
+	}
+	
+
+/** 3 - Chat **/
+#chat{
+	background-image: url('../images/bg_chat.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+#chat textarea{
+	width: 100%;
+	position: absolute;
+	bottom: 15px;
+}
+.chatMsg{
+	position: relative;
+	height: 1000px;
+}
+.navChat{
+	margin-bottom: 0px;
+}
+.trocaMsg{
+	display: flex;
+	flex-direction: column;
+}
+.msgWat{
+	color:#000;
+	display: flex;
+	justify-content: flex-start;
+	background-color: #fff;
+	margin-top: 15px;
+	padding: 15px;
+}
+.msgPessoa{
+	margin-top: 15px;
+	display: flex;
+	justify-content: flex-end;
+	padding: 15px;
+	background-color: #fff;
 }
 
-th {
-	border-bottom: 1px solid #000;
+
+/** 4 - Página Post **/
+
+.textoPost p{
+	color: #414141;
+	text-align: justify;
+}
+.audioPost audio{
+	margin:auto;
+	display: flex;
 }
 
-th, td {
-	text-align: left;
-	padding: 2px 20px;
+
+
+/* ! - MOBILE FIRST */
+@media (max-width: 767px){
+	/** 1.1 - Navbar **/
+	.menuTexto{
+		display: block;
+	}
+	.navbar-default .navbar-nav>li>a{
+		margin-top: 0px;
+	}
+	.menuTexto2{
+		display: none;
+	}
+	.navbar-default .navbar-collapse, .navbar-default .navbar-form{
+		border-color: transparent;
+	}
+	.navbar-default .navbar-toggle .icon-bar{
+		background-color: #fff;
+	}
+	.navbar-default .navbar-toggle{
+		border: 0;
+		margin-top: 17px;
+	}
+	.navbar-toggle .icon-bar{
+		height: 3px;
+		width: 31px;
+	}
+	.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover{
+		background-color: transparent;
+	}
+	.navbar-brand img{ 
+		max-width: 32px;
+	}
+	.navbar-brand{
+		padding: 10px;
+		padding-top: 20px;
+		padding-left: 20px;
+	}
+	/** 2.1 - Página de Login **/
+	#pageLogin img{
+		max-width: 335px;
+	}
+	/** 2.2 - Página Home **/
+	.post .col-xs-6{
+		padding-left: 5.0px;
+		padding-right: 5.0px;
+		padding-bottom: 7.5px;
+	}
+	#home .col-md-6{
+		margin-bottom: 0px;
+	}
+	#home h1{
+		padding-left: 7.5px;
+	}
+	.menuTexto{
+		width: 86px;
+	}
+	.postsHome{
+		max-height: 142px;
+		width: 100%;
+		min-height: 142px;
+		max-width: 348px;
+	}
 }
 
-.env-var {
-	text-align: right;
-	border-right: 1px solid #000;
-	width: 30%;
-}
 
-pre {
-	padding: 0;
-	margin: 0;
-}
+
 
