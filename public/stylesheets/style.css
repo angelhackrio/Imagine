@@ -329,6 +329,20 @@ a:hover {
 .historias{
 	background-color: #fff;
 }
+.carousel-control.left{
+	background-image: none;
+	top: 50%;
+}
+.carousel-control.right{
+	background-image: none;
+	top:50%;
+}
+#myCarousel{
+	margin-bottom: 30px;
+}
+.item img{
+	margin:auto;
+}
 .conversarSobreH{
 	background-color: #286bb2;
 	width: 50%;
