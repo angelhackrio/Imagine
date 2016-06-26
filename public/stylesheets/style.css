@@ -407,6 +407,7 @@ a:hover {
 	background-color: #666;
 }
 #btnPlay img{
+	cursor: pointer;
 	margin:auto;
 	max-width: 120px;
 }
